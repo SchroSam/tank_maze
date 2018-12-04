@@ -28,7 +28,7 @@ PlayerTNKM(30, 15);
 }
 
 
-void redraw(){
+void redrawM(){
   if(GemStet == 0){
     background(255);
     image(Goodtank,Hx-25,Hy-25,50,50);
@@ -37,8 +37,9 @@ void redraw(){
    }
 }
 
-void PlayerTNKM(int FSD, int RSD) { 
-  redraw();
+void PlayerTNKM(int FSD, int RSD){
+  
+ redrawM();
  if(GemStet == 0){
  
  if(keyPressed) {
@@ -49,19 +50,19 @@ void PlayerTNKM(int FSD, int RSD) {
 
      if(PlayerTNKD == 1){
      Hy -= FSD;
-     redraw();
+     redrawM();
   }
     else if(PlayerTNKD == 2){
     Hx += FSD;
-    redraw();
+    redrawM();
 }
    else if(PlayerTNKD == 3){
    Hy += FSD;
-   redraw();
+   redrawM();
 }
   else if(PlayerTNKD == 4){
   Hx -= FSD;
-  redraw();
+  redrawM();
 }
 
  }
@@ -87,9 +88,9 @@ else{
 }
 
   }
+ 
 
-
-    if (Hx>=width) {
+    if(Hx>=width) {
     Hx -= FSD;
   }
   if (Hx <= 0) {
@@ -101,7 +102,20 @@ else{
   if (Hy <= 0) {
     Hy += FSD;
   }
- }
-   if(PlayerTNKD == 1)
- 
+ } 
+  if(PlayerTNKD == 1){
+    Goodtank = loadImage("tank.jpg");
   }
+  
+  else if(PlayerTNKD == 2){
+    Goodtank = loadImage("tankRight.jpg");
+  }
+  else if(PlayerTNKD == 3){
+    Goodtank = loadImage("tankDown.jpg");
+  }
+  
+  else if(PlayerTNKD == 4){
+    Goodtank = loadImage("tankLeft.jpg");
+  }
+
+}

@@ -38,14 +38,13 @@ void redrawM(){
 }
 
 void PlayerTNKM(int FSD, int RSD){
-  
  redrawM();
  if(GemStet == 0){
- 
+
  if(keyPressed) {
 
    if (keyCode == UP) {
-   
+   delay(300);
   
 
      if(PlayerTNKD == 1){
@@ -68,6 +67,7 @@ void PlayerTNKM(int FSD, int RSD){
  }
  
 if (keyCode == RIGHT){
+  delay(300);
   if (PlayerTNKD == 4){
     PlayerTNKD = 1;
 }
@@ -77,6 +77,7 @@ else {
 
 }
 if(keyCode == LEFT){
+  delay(300);
   if(PlayerTNKD == 1){
     PlayerTNKD = 4;
 }
@@ -105,7 +106,8 @@ else{
  } 
   if(PlayerTNKD == 1){
     Goodtank = loadImage("tank.jpg");
-  }
+}
+  
   
   else if(PlayerTNKD == 2){
     Goodtank = loadImage("tankRight.jpg");

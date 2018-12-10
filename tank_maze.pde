@@ -55,7 +55,11 @@ void PlayerTNKM(int FSD){
  if(GemStet == 0){
  
  if(keyPressed) {
-
+   
+   Delay(300);
+   ProjectileFlight();
+   
+   
    if (keyCode == UP) {
    
   
@@ -138,24 +142,43 @@ void Projectile(){
    if(key == 'f'){
      torpA = 1;
      if(PlayerTNKD == 1){
+       torpY -= 30;
        torpD = 1;
        
      }
      else if(PlayerTNKD == 2){
+       torpX += 30;
        torpD = 2;
      
      }
      else if(PlayerTNKD == 3){
+       torpY += 30
        torpD = 3;
        
      }
      else if(PlayerTNKD == 4){
+       torpX -= 30;
        torpD = 4;
        
      }
     }
   
   
+  }
+}
+
+void ProjectileFlight(){
+  if(torpD == 1){
+    torpY -= 30;
+  }
+  else if(torpD == 2){
+    torpX += 30;
+  }
+  else if(torpD == 3){
+    torpY += 30;
+  }
+  else if(torpD == 4){
+    torpX -= 30;
   }
 }
 

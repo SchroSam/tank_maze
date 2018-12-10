@@ -1,7 +1,4 @@
 /* Schrod, Olynerikson
-
-
-
 */ 
 
 // for PTNKD 1 is facing up 2 is right, 3 is down, 4 is left
@@ -26,6 +23,7 @@ void setup(){
 
 void draw(){
 PlayerTNKM(30);
+Projectile();
 
 }
 
@@ -39,12 +37,13 @@ void redrawM(){
     ln();
     
     }
-    if(torpA == 1){
+    else if(torpA == 1){
      background(255);
      image(Goodtank,Hx-25,Hy-25,50,50);
      //image(Badtank, Vx-25, Vy-25,50,50);
      fill(247,210,24);
      ellipse(torpX,torpY,5,5);
+     ln();
     }
    }
 }
@@ -56,7 +55,7 @@ void PlayerTNKM(int FSD){
  
  if(keyPressed) {
    
-   Delay(300);
+   delay(300);
    ProjectileFlight();
    
    
@@ -152,7 +151,7 @@ void Projectile(){
      
      }
      else if(PlayerTNKD == 3){
-       torpY += 30
+       torpY += 30;
        torpD = 3;
        
      }
@@ -242,128 +241,135 @@ ln2+=30;
 line(0,ln2,1500,ln2);
 ln2+=30;
 line(0,ln2,1500,ln2);
+line(0,ln2,1500,ln2);
+ln2+=30;
+line(0,ln2,1500,ln2);
+ln2+=30;
+line(0,ln2,1500,ln2);
+ln2+=30;
+
 ln2+=30;
 // vertical lines  
-line(20,0,20,800);
-line(50,0,50,800);
-line(80,0,80,800);
-line(110,0,110,800);
-line(140,0,140,800);
-line(170,0,170,800);
-line(200,0,200,800);
-line(230,0,230,800);
-line(260,0,260,800);
-line(290,0,290,800);
-line(320,0,320,800);
-line(350,0,350,800);
-line(380,0,380,800);
-line(410,0,410,800);
- line(440,0,440,800);
-line(470,0,470,800);
-line(ln1,0,ln1,800);
+line(20,0,20,900);
+line(50,0,50,900);
+line(80,0,80,900);
+line(110,0,110,900);
+line(140,0,140,900);
+line(170,0,170,900);
+line(200,0,200,900);
+line(230,0,230,900);
+line(260,0,260,900);
+line(290,0,290,900);
+line(320,0,320,900);
+line(350,0,350,900);
+line(380,0,380,900);
+line(410,0,410,900);
+ line(440,0,440,900);
+line(470,0,470,900);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
-line(ln1,0,ln1,800);
+line(ln1,0,ln1,900);
 ln1+=30;
 }

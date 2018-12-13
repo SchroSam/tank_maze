@@ -1,7 +1,4 @@
 /* Schrod, Olynerikson
-
-
-
 */ 
 
 // for PTNKD 1 is facing up 2 is right, 3 is down, 4 is left
@@ -12,8 +9,10 @@ PImage Goodtank = null;
 PImage Badtank = null;
 float Hx = 36;
 float Hy = 40;
+float Vx = 36;
+float Vy = 70;
 int torpD = 1;
-int torpA = 0;
+int torpA = 1;
 float torpX = 2000;
 float torpY = 2000;
 
@@ -37,22 +36,21 @@ void redrawM(){
     if(torpA == 0){
     background(255);
     image(Goodtank,Hx-25,Hy-25,50,50);
-    //image(Badtank, Vx-25, Vy-25,50,50);
+    image(Badtank, Vx-25, Vy-25,50,50);
     ln();
     
     }
     else if(torpA == 1){
      background(255);
      image(Goodtank,Hx-25,Hy-25,50,50);
-     //image(Badtank, Vx-25, Vy-25,50,50);
+     image(Badtank, Vx-25, Vy-25,50,50);
      fill(247,210,24);
      ellipse(torpX,torpY,5,5);
      ln();
     }
    }
 }
-
-void PlayerTNKM(int FSD){
+void PlayerTNKMbad(int FSD){
   
  redrawM();
  if(GemStet == 0){
@@ -64,6 +62,96 @@ void PlayerTNKM(int FSD){
    
    
    if (keyCode == UP) {
+   ProjectileFlight();
+   delay(300);
+
+     if(PlayerTNKD == 1){
+     Vy -= FSD;
+     redrawM();
+  }
+    else if(PlayerTNKD == 2){
+    Vx += FSD;
+    redrawM();
+}
+   else if(PlayerTNKD == 3){
+   Vy += FSD;
+   redrawM();
+}
+  else if(PlayerTNKD == 4){
+  Vx -= FSD;
+  redrawM();
+}
+
+ }
+ 
+if (keyCode == RIGHT){
+delay(300);
+ProjectileFlight();
+  if (PlayerTNKD == 4){
+    PlayerTNKD = 1;
+}
+else {
+  PlayerTNKD += 1;
+}
+
+}
+if(keyCode == LEFT){
+delay(300);
+ProjectileFlight();
+  if(PlayerTNKD == 1){
+    PlayerTNKD = 4;
+}
+else{
+  PlayerTNKD -= 1;
+}
+
+
+}
+
+  }
+ 
+
+    if(Vx>=width) {
+    Vx -= FSD;
+  }
+  if (Vx <= 0) {
+    Vx += FSD;
+  }
+  if (Vy >= height) {
+    Vy -= FSD;
+  }
+  if (Vy <= 0) {
+    Vy += FSD;
+  }
+ } 
+  if(PlayerTNKD == 1){
+    Badtank = loadImage("Badtank.jpg");
+  }
+  
+  else if(PlayerTNKD == 2){
+    Badtank = loadImage("Badtank.jpg");
+  }
+  else if(PlayerTNKD == 3){
+    Badtank = loadImage("Badtank.jpg");
+  }
+  
+  else if(PlayerTNKD == 4){
+    Badtank = loadImage("Badtank.jpg");
+  }
+
+}// end of this void+
+void PlayerTNKM(int FSD){
+  
+ redrawM();
+ if(GemStet == 0){
+ 
+ if(keyPressed) {
+   
+   
+   
+   
+   
+   if (key = 'W' || key = 'w') {
    ProjectileFlight();
    delay(300);
 
@@ -86,7 +174,7 @@ void PlayerTNKM(int FSD){
 
  }
  
-if (keyCode == RIGHT){
+if (key = D){
 delay(300);
 ProjectileFlight();
   if (PlayerTNKD == 4){
@@ -141,7 +229,7 @@ else{
     Goodtank = loadImage("tankLeft.jpg");
   }
 
-}
+}// end of this void+
 
 void Projectile(){
   if(keyPressed){

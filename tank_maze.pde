@@ -1,7 +1,11 @@
 /* Schrod, Olynerikson
+
+
+
 */ 
 
 // for PTNKD 1 is facing up 2 is right, 3 is down, 4 is left
+
 int GemStet = 0;
 int PlayerTNKD = 1; 
 PImage Goodtank = null;
@@ -55,13 +59,13 @@ void PlayerTNKM(int FSD){
  
  if(keyPressed) {
    
-   delay(300);
-   ProjectileFlight();
+   
+   
    
    
    if (keyCode == UP) {
-   
-  
+   ProjectileFlight();
+   delay(300);
 
      if(PlayerTNKD == 1){
      Hy -= FSD;
@@ -83,6 +87,8 @@ void PlayerTNKM(int FSD){
  }
  
 if (keyCode == RIGHT){
+delay(300);
+ProjectileFlight();
   if (PlayerTNKD == 4){
     PlayerTNKD = 1;
 }
@@ -92,6 +98,8 @@ else {
 
 }
 if(keyCode == LEFT){
+delay(300);
+ProjectileFlight();
   if(PlayerTNKD == 1){
     PlayerTNKD = 4;
 }
@@ -138,25 +146,25 @@ else{
 void Projectile(){
   if(keyPressed){
     
-   if(key == 'f'){
+   if(key == 'f' || key == 'F'){
      torpA = 1;
      if(PlayerTNKD == 1){
-       torpY -= 30;
+       torpY = Hx - 30;
        torpD = 1;
        
      }
      else if(PlayerTNKD == 2){
-       torpX += 30;
+       torpX = Hx + 30;
        torpD = 2;
      
      }
      else if(PlayerTNKD == 3){
-       torpY += 30;
+       torpY = Hx + 30;
        torpD = 3;
        
      }
      else if(PlayerTNKD == 4){
-       torpX -= 30;
+       torpX = Hx - 30;
        torpD = 4;
        
      }

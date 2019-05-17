@@ -17,6 +17,8 @@ boolean wPressed = false;
 boolean dPressed = false;
 boolean sPressed = false;
 boolean aPressed = false;
+int onescr = 0;
+int twoscr = 0;
 float Hx = 36;
 float Hy = 40;
 float Vx = 1450;
@@ -46,12 +48,17 @@ void redrawM() {
     background(255);
     image(Goodtank, Hx - 25, Hy - 25, 50, 50);
     image(Badtank, Vx - 25, Vy - 25, 50, 50);
-
+    fill(0);
+    textAlign(CENTER);
+    textSize(20);
+    text("Player 1 score is " + onescr + " Player 2 score is " + twoscr,width/2, 855);
+  }
     if (GemStet == 1) {
+      textSize(50);
       image(Goodtank, Hx - 25, Hy -25, 50, 50);
       image(Explosion, Vx - 25, Vy - 25, 50, 50);
+      text("Player 1 score is " + onescr + " Player 2 score is " + twoscr,width/2, 855);
     }
-  }
 }
 
 void keyPressed() {
@@ -224,24 +231,38 @@ void Player2TNKM(int FSD) {
 }
 
 void HitReg() {
+  boolean hit = false;
   if (GemStet == 0) {
     //hit detection for the player and the enemy
     float dx = Hx - Vx;
     float dy = Hy - Vy;
     float distanceHV = sqrt(dx * dx + dy * dy);
     //good ol' pythatgorous
-    if (distanceHV < 50) {
+    if (distanceHV < 50 && GemStet == 0) {
       GemStet = 3;
-      textSize(50);
+      textSize(20);
       fill(#050505);
       textAlign(CENTER);
       text("Crashed",width/2,height/2);
       if(PLTRN == 1){
+        hit = true;
         PLTRN = 2; 
       }
-      if(PLTRN == 2){
+      else if(PLTRN == 2){
+       hit = true;
        PLTRN = 1; 
       }
+      
+    }
+    if(hit){
+     if(PLTRN == 1){
+       hit = false;
+       onescr += 1;
+     }
+     if(PLTRN == 2){
+       hit = false;
+       twoscr += 1;
+     }
     }
   }
 }
